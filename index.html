@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        
+    </script>
 </head>
 <body>
     <form action="container">
@@ -22,16 +25,46 @@
         </div>
         <div id="button">
             
-            <div id="button">
-                <input type="submit" value="Desligar">
+            <div id="buttonD">
+                <input type="button" onclick="Desligar()" value="Desligar">
             </div>
 
-            <div id="button">
-                <input type="submit" value="Ligar">
+            <div id="buttonL">
+                <input type="button"  onclick="ligar()" value="Ligar">
             </div>
 
         </div>
     
         <h2>Sangue||BloodMan||BloodDev||Tamelzinhi||TsandzanaDev</h2>
     </form>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script>
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyDOWUoBo6zKpo4DCK7Rfd9DggKjgykDmMw",
+            authDomain: "blooddevtameledev.firebaseapp.com",
+            databaseURL: "https://blooddevtameledev-default-rtdb.firebaseio.com",
+            projectId: "blooddevtameledev",
+            storageBucket: "blooddevtameledev.appspot.com",
+            messagingSenderId: "126329389298",
+            appId: "1:126329389298:web:64c0bce6fed1dbda51d06b",
+            measurementId: "G-479643QQBV"
+            }
+
+         firebase.initializeApp(firebaseConfig);
+        
+        function Desligar(){
+            //alert("Firebase Desligar")
+            firebase.database().ref('SALA').set({estado: 'DESLIGADA'})
+        }
+
+        function ligar(){
+            //alert("Firebase Ligar")
+            firebase.database().ref('SALA').set({estado: 'LIGADA'})
+        }
+   
+    </script>
+
+
 </html>
